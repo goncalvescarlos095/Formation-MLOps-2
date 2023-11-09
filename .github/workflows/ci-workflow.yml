@@ -5,7 +5,12 @@ on:
 
 jobs:
   build:
+    # Configuration de la machine utilisée pour lancer la CI
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.7", "3.8", "3.9", "3.10"]
+
     steps:
       # Pull du code
       - uses: actions/checkout@v3
